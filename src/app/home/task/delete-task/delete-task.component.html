@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>
+  Delete <b>{{ data["data"].priority | titlecase }}</b> Task
+</h2>
+<mat-dialog-content>Are you sure?</mat-dialog-content>
+<br>
+<!-- <mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button (click)="deleteTask()">Yes</button>
+</mat-dialog-actions> -->
+<div class="d-flex float-right">
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button (click)="deleteTask()" class="ml-4">Yes</button>
+</div>

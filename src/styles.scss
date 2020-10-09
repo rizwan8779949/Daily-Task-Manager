@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./scss/toaster.scss";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./scss/variable.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+body {
+  font-family: "Muli";
+  font-size: 14px;
+  color: $textColorSecondary;
+  background-color: #f3ebeb;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.global-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.custom-bg-white {
+  background-color: #fff;
+}
+.example-full-width {
+  width: 100%;
+}
+.global-rounded {
+  border-radius: 10px;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-box-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.mat-table {
+  width: 100%;
+}
+.mat-table {
+  background: none;
+  border-radius: 10px;
+}
+.main-heading-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+th {
+  color: #332e2e;
+  font-weight: 500;
+  border: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+td {
+  color: #606060;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.table-border-top th {
+  border-top: none;
+  border-bottom: none !important;
+}
+.forms-margin-top {
+  margin-top: 15px;
+}
+.form-button {
+  position: fixed;
+  bottom: 20px;
+  width: 304px;
+  height: 37px;
+  line-height: 21px;
+  color: #fff;
+  background-color: $backgroundColorPrimary;
+  border-color: $backgroundColorPrimary;
+  border-radius: 7px;
+  border: none;
+}
+.form-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.form-button:focus {
+  outline: none;
+}
+.custom-modal-header {
+  display: flex;
+  .cross-images {
+    width: 50%;
+    text-align: right;
+  }
+  .custom-times-form-circle {
+    margin-top: 5px;
+    width: 20px;
+    cursor: pointer;
+  }
+  .heading-form {
+    width: 50%;
+    font-size: 22px;
+  }
+}
+.list-card {
+  padding: 20px 0px 20px 17px;
+}
+.mat-edit-delte-icon {
+  font-size: 16px;
+}
+.heading {
+  color: $backgroundColorPrimary;
+}
+.cursor-drag {
+  cursor: all-scroll;
+}
+.card-height-overflow {
+  overflow: auto;
+  height: 485px;
+}

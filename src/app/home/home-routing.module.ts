@@ -4,17 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'task-list',
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    path: 'task-list',
+    loadChildren: () => import('./task/task.module').then((m) => m.TaskModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class HomeRoutingModule {}

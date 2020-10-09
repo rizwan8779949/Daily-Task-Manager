@@ -1,0 +1,19 @@
+<div class="card-height-overflow">
+  <div
+    class="custom-bg-white global-rounded custom-box-shadow table-overflow-auto list-card mt-2 mb-2"
+    *ngFor="let data of completedlistDto; let i = index"
+  >
+    <div class="row">
+      <div class="col-md-12" *ngIf="data.title" matTooltip="{{ data.title }}">
+        {{ data.title | titlecase | slice: 0:100 }}
+        <span *ngIf="data.title.length > 100">...</span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="custom-bg-white global-rounded custom-box-shadow table-overflow-auto list-card mt-2 mb-2"
+    *ngIf="completedlistDto.length == 0"
+  >
+    <div class="text-center">No Completed Tasks Available</div>
+  </div>
+</div>

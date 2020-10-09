@@ -1,0 +1,31 @@
+<div class="card-height-overflow">
+  <div
+    class="custom-bg-white global-rounded custom-box-shadow table-overflow-auto list-card mt-2 mb-2"
+    *ngFor="let data of pendinglistDto; let i = index"
+  >
+    <div class="row">
+      <div class="col-md-9" *ngIf="data.title" matTooltip="{{ data.title }}">
+        {{ data.title | titlecase | slice: 0:100 }}
+        <span *ngIf="data.title.length > 100">...</span>
+      </div>
+      <div class="col-md-3">
+        <mat-icon
+          (click)="editModal(data, i)"
+          class="mat-edit-delte-icon mr-2 cursor-pointer"
+          >edit</mat-icon
+        >
+        <mat-icon
+          (click)="deleteModal(data, i)"
+          class="mat-edit-delte-icon cursor-pointer"
+          >delete</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    class="custom-bg-white global-rounded custom-box-shadow table-overflow-auto list-card mt-2 mb-2"
+    *ngIf="pendinglistDto.length == 0"
+  >
+    <div class="text-center">No Pending Tasks Available</div>
+  </div>
+</div>

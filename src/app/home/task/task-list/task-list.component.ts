@@ -18,18 +18,8 @@ export class TaskListComponent implements OnInit {
   pendinglistDto = [];
   scrore: number;
   ngOnInit() {
-    if (localStorage.getItem('completedTask')) {
-      this.completedlistDto = [];
-      this.completedlistDto = this.utils.getLocalStorage('completedTask');
-    }
-    if (localStorage.getItem('inprogressTask')) {
-      this.inprogresslistDto = [];
-      this.inprogresslistDto = this.utils.getLocalStorage('inprogressTask');
-    }
-    if (localStorage.getItem('pendingTask')) {
-      this.pendinglistDto = [];
-      this.pendinglistDto = this.utils.getLocalStorage('pendingTask');
-    }
+    this.getTasksList();
+    this.refreshList()
     this.scrore = Math.round(
       this.completedlistDto.length
         ? this.completedlistDto.length
@@ -43,17 +33,26 @@ export class TaskListComponent implements OnInit {
               : 0)
     );
   }
-  addModal() {
-    const dialogRef = this.dialog.open(AddTaskComponent, {
-      disableClose: true,
-      width: '350px',
-      height: '100%',
-      position: {
-        right: '0',
-      },
-    });
-    dialogRef.afterClosed().subscribe(() => {
-      this.utils.taskList$.next(true);
+  refreshList() {
+    this.utils.taskList$.subscribe((res: any) => {
+      if (res) {
+        this.getTasksList();
+      }
     });
   }
+  getTasksList(){
+    if (localStorage.getItem('completedTask')) {
+      this.completedlistDto = [];
+      this.completedlistDto = this.utils.getLocalStorage('completedTask');
+    }
+    if (localStorage.getItem('inprogressTask')) {
+      this.inprogresslistDto = [];
+      this.inprogresslistDto = this.utils.getLocalStorage('inprogressTask');
+    }
+    if (localStorage.getItem('pendingTask')) {
+      this.pendinglistDto = [];
+      this.pendinglistDto = this.utils.getLocalStorage('pendingTask');
+    }
+  }
+  
 }

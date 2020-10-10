@@ -26,8 +26,9 @@ import {
   MatDatepickerToggle,
 } from '@angular/material/datepicker';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { HeaderComponent } from './Component/header/header.component';
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -66,6 +67,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatDatepickerModule,
     MatNativeDateModule,
     DragDropModule,
+    HeaderComponent
   ],
   entryComponents: [],
   providers: [ApiService, UtilsService, SnackBarService],

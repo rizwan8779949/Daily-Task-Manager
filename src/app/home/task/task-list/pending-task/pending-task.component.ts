@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared-module/Services/api/api.service';
 import { UtilsService } from 'src/app/shared-module/Services/utils/utils.service';
 import { Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class PendingTaskComponent implements OnInit {
     private snackBarService: SnackBarService,
     private dialog: MatDialog
   ) {}
-  pendinglistDto = [];
+  @Input() pendinglistDto = [];
   ngOnInit(): void {
     this.getTaskList();
     this.refreshList();
